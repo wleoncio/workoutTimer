@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 def defineWorkout():
   try:
     n_sets = int(input("Number of sets [5]: "))
