@@ -33,7 +33,8 @@ def runTimer(parms):
   rest_exercises = parms[3]
   for x in range(n_exercises):
     print("\nStarting exercise number " + str(x + 1) + " of " + str(n_exercises))
-    for s in range(n_sets):
+    for s in range(n_sets - 1):
+      print("Start set number " + str(s + 1))
       input("Press enter to rest from set number " + str(s + 1) + " of " + str(n_sets))
       takeBreak(rest_sets)
     if x < n_exercises - 1:
