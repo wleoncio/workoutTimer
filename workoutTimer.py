@@ -6,17 +6,17 @@ def defineWorkout():
   except ValueError:
     n_sets = 5
   try:
-    rest_between_sets = int(input("Rest between sets [0]: "))
+    rest_between_sets = int(input("Rest between sets [30]: "))
   except ValueError:
-    rest_between_sets = 0
+    rest_between_sets = 30
   try:
     n_exercises = int(input("Number of exercises [6]: "))
   except ValueError:
     n_exercises= 6
   try:
-    rest_between_exercises = int(input("Rest between exercises [0]: "))
+    rest_between_exercises = int(input("Rest between exercises [120]: "))
   except ValueError:
-    rest_between_exercises = 0
+    rest_between_exercises = 120
   return([n_sets, rest_between_sets, n_exercises, rest_between_exercises])
 
 import time
