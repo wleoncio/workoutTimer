@@ -56,7 +56,7 @@ def runRegularTimer(parms):
       print("Start set number " + str(s + 1))
       input("Press enter to rest from set number " + str(s + 1) + " of " + str(n_sets))
       takeBreak(rest_sets)
-    print("Start set number " + str(n_sets))
+    print("Start set number " + str(n_sets) + ". Last set, let's go!")
     if x < n_exercises - 1:
       input("Press enter to rest and go to the next exercise")
       takeBreak(rest_exercises)
