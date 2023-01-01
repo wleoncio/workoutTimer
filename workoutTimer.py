@@ -37,8 +37,9 @@ def runTimer(parms, superset = False):
       print("Start set number " + str(s + 1))
       input("Press enter to rest from set number " + str(s + 1) + " of " + str(n_sets))
       takeBreak(rest_sets)
+    print("Start set number " + str(n_sets))
     if x < n_exercises - 1:
-      input("\nDONE! Press enter to rest from this exercise")
+      input("Press enter to rest and go to the next exercise")
       takeBreak(rest_exercises)
     else:
       print("Workout finished. Well done!")
@@ -48,10 +49,10 @@ def main():
   try:
     is_superset = bool(input("Is this workout a superset [y/N]? ") == "y")
     if is_superset:
-      print("Supersets not yet supported")
+      parms = defineSupersetWorkout()
     else:
       parms = defineRegularWorkout()
-      runTimer(parms)
+    runTimer(parms, superset = parms[-1])
   except KeyboardInterrupt:
     print("\nWorkout cancelled by user")
     exit()
