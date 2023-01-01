@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-def defineWorkout():
+def defineRegularWorkout():
   try:
     n_sets = int(input("Number of sets [5]: "))
   except ValueError:
@@ -26,7 +26,7 @@ def takeBreak(t):
     t -= 1
     time.sleep(1)
 
-def runTimer(parms):
+def runTimer(parms, superset = False):
   n_sets = parms[0]
   rest_sets = parms[1]
   n_exercises = parms[2]
@@ -44,5 +44,16 @@ def runTimer(parms):
       print("Workout finished. Well done!")
 
 # Execution
-parms = defineWorkout()
-runTimer(parms)
+def main():
+  try:
+    is_superset = bool(input("Is this workout a superset [y/N]? ") == "y")
+    if is_superset:
+      print("Supersets not yet supported")
+    else:
+      parms = defineRegularWorkout()
+      runTimer(parms)
+  except KeyboardInterrupt:
+    print("\nWorkout cancelled by user")
+    exit()
+
+main()
