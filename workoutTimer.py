@@ -23,11 +23,14 @@ def setWorkoutParms(superset = False):
     return([n_sets, rest_between_sets, n_exercises, rest_between_exercises])
 
 import time
+import beepy
 def takeBreak(t):
   while t > 0:
     print(t)
     t -= 1
     time.sleep(1)
+  print(t)
+  beepy.beep(sound="ping")
 
 def runSupersetTimer(parms):
   # Defining parametes
